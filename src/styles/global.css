@@ -1,9 +1,137 @@
+@font-face {
+  font-family: 'denton-regular';
+  src: url('fonts/DentonTest-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'myriad-regular';
+  src: url('fonts/Myriad-Pro-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'nunito-medium-italic';
+  src: url('fonts/Nunito-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opensans-bold';
+  src: url('fonts/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opensans-italic';
+  src: url('fonts/OpenSans-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opensans-medium';
+  src: url('fonts/OpenSans-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opensans-medium-italic';
+  src: url('fonts/OpenSans-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opensans-regular';
+  src: url('fonts/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-medium-italic';
+  src: url('fonts/Poppins-MediumItalic.ttf') format('truetype');
+}
+
+
 @import "tailwindcss";
+
+@theme {
+  --font-*: initial;
+  --font-denton: "denton-regular", "sans-serif";
+  --font-myriad: "myriad-regular", "sans-serif";
+  --font-nunito: "nunito-medium-italic", "sans-serif";
+  --font-bold: "opensans-bold", "sans-serif";
+  --font-italic: "opensans-italic", "sans-serif";
+  --font-medium: "opensans-medium", "sans-serif";
+  --font-medium-italic: "opensans-medium-italic", "sans-serif";
+  --font-regular: "opensans-regular", "sans-serif";
+  --font-poppins: "poppins-medium-italic", "sans-serif";
+
+  --text-*: initial;
+  --text-sm: 0.9rem;
+  --text-sm--line-height: 1rem;
+  --text-base: 1.35rem;
+  --text-base--line-height: 1.5rem;
+  --text-md:1.35rem;
+  --text-md--line-height: 1.5rem;
+}
+
 @plugin "daisyui";
 
-@font-face {
-  font-family: 'DummyFont';
-  src: url('fonts/dummy-font.ttf') format('TrueType');
+@plugin "daisyui/theme" {
+  name: "light-theme";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-primary: oklch(22.32% 0.0016 17.27);
+  --color-secondary: oklch(56.58% 0 0);
+  --color-base-content: oklch(22.32% 0.0016 17.27);
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98.18% 0.009009553482392496 34.30327182035201);
+  --color-base-300: oklch(91.45% 0.039 17.89);
+  --color-primary-content: oklch(38.96% 0.0617 40);
+  --color-secondary-content: oklch(56.58% 0 0);
+  --color-accent: oklch(93.68% 0.03200956182285715 15.361930351486542);
+  --color-accent-content: oklch(27% 0.105 12.094);
+  --color-neutral: oklch(80.38% 0.111 15.65);
+  --color-neutral-content: oklch(12% 0.042 264.695);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(62% 0.194 149.214);
+  --color-success-content: oklch(98% 0.003 247.858);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(27% 0.077 45.635);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(98% 0.003 247.858);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+
+  --my-shadow: 0 0 6px oklch(70% 0.039 39.93);
+}
+
+@plugin "daisyui/theme" {
+  name: "dark-theme";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(25.33% 0.016 252.42);
+  --color-base-200: oklch(23.26% 0.014 253.1);
+  --color-base-300: oklch(21.15% 0.012 254.09);
+  --color-base-content: oklch(97.807% 0.029 256.847);
+  --color-primary: oklch(58% 0.233 277.117);
+  --color-primary-content: oklch(96% 0.018 272.314);
+  --color-secondary: oklch(65% 0.241 354.308);
+  --color-secondary-content: oklch(94% 0.028 342.258);
+  --color-accent: oklch(77% 0.152 181.912);
+  --color-accent-content: oklch(38% 0.063 188.416);
+  --color-neutral: oklch(14% 0.005 285.823);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(37% 0.077 168.94);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+  --color-error: oklch(71% 0.194 13.428);
+  --color-error-content: oklch(27% 0.105 12.094);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
 @layer components {
@@ -26,3 +154,95 @@
 .box-shadow {
   filter: drop-shadow(0 0 0.25rem #afaead);
 }
+
+/* Remove input number arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+/* ul.menu-desktop {
+  position: relative;
+  li {
+    flex: 1 1;
+    position: relative;
+    &.current,
+    &:hover {
+      z-index: 2;
+    }
+    &:last-child::after {
+      display: block;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      display: block;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    
+    &:nth-child(1).current ~ li:last-child::after {
+      left: -400%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(2).current ~ li:last-child::after {
+      left: -300%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(3).current ~ li:last-child::after {
+      left: -200%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(4).current ~ li:last-child::after {
+      left: -100%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(5).current ~ li:last-child::after {
+      left: 0%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+
+    &:nth-child(1):hover ~ li:last-child::after {
+      left: -400%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(2):hover ~ li:last-child::after {
+      left: -300%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(3):hover ~ li:last-child::after {
+      left: -200%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(4):hover ~ li:last-child::after {
+      left: -100%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    &:nth-child(5):hover ~ li:last-child::after {
+      left: 0%;
+      background-color: oklch(56.58% 0 0 / 40%);
+    }
+    a {
+      transition: all 1s ease;
+      padding: 1rem;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+      &:hover {
+        color: #fff;
+        z-index: 9;
+      }
+    }
+  }
+} */
