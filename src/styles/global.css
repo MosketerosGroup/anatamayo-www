@@ -3,6 +3,14 @@
   src: url('fonts/DentonTest-Regular.otf') format('opentype');
 }
 @font-face {
+  font-family: 'denton-Bold';
+  src: url('fonts/DentonTest-bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'denton-thin';
+  src: url('fonts/DentonTest-Thin.otf') format('opentype');
+}
+@font-face {
   font-family: 'myriad-regular';
   src: url('fonts/Myriad-Pro-Regular.ttf') format('truetype');
 }
@@ -40,7 +48,9 @@
 
 @theme {
   --font-*: initial;
-  --font-denton: "denton-regular", "sans-serif";
+  --font-denton-regular: "denton-regular", "sans-serif";
+  --font-denton-bold: "denton-bold", "sans-serif";
+  --font-denton-thin: "denton-thin", "sans-serif";
   --font-myriad: "myriad-regular", "sans-serif";
   --font-nunito: "nunito-medium-italic", "sans-serif";
   --font-bold: "opensans-bold", "sans-serif";
