@@ -1,4 +1,18 @@
 ---
+import MenuMobile from "@components/widgets/MenuMobile.astro";
+import MenuDesktop from "@components/widgets/MenuDesktop.astro";
+
 ---
 
 
+<header>
+  <!-- <div class="block [background:no-repeat_center_linear-gradient(#00000000_50%,_#ede1d1FF),_no-repeat_center_bottom/100%_url(/img/header-mobile.webp)] md:hidden" id="header-mobile"> -->
+  <div class="font-denton">
+    <div class="md:hidden">
+      <MenuMobile />
+    </div>
+    <div class="hidden float-right w-full lg:w-[80%] xl:w-[70%] md:block">
+      <MenuDesktop />
+    </div>
+  </div>
+</header>

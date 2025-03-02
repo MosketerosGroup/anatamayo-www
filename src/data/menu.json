@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Home",
+    "href": "#!",
+    "target": ""
+  },
+  {
+    "name": "About me",
+    "href": "#!",
+    "target": ""
+  },
+  {
+    "name": "Gallery",
+    "href": "#!",
+    "target": ""
+  },
+  {
+    "name": "Exhibitions",
+    "href": "#!",
+    "target": ""
+  },
+  {
+    "name": "Contact",
+    "href": "#!",
+    "target": ""
+  }
+]
