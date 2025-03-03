@@ -2,17 +2,35 @@
 import MenuMobile from "@components/widgets/MenuMobile.astro";
 import MenuDesktop from "@components/widgets/MenuDesktop.astro";
 
+import Logo from '@assets/logo.svg';
 ---
 
-
 <header>
-  <!-- <div class="block [background:no-repeat_center_linear-gradient(#00000000_50%,_#ede1d1FF),_no-repeat_center_bottom/100%_url(/img/header-mobile.webp)] md:hidden" id="header-mobile"> -->
   <div class="font-denton-regular">
     <div class="md:hidden">
       <MenuMobile />
     </div>
     <div class="hidden float-right w-full lg:w-[80%] xl:w-[70%] md:block">
       <MenuDesktop />
+    </div>
+  </div>
+
+  <div class="pt-32 box-container">
+    <div class="w-full h-6">
+      <div class="w-[40%] float-left border-t-[1px] border-primary">&nbsp;</div>
+    </div>
+    <div class="w-[90%] mx-auto float-end flex flex-row justify-evenly py-8 xl:py-24">
+      <div>
+        <p class="font-nunito tracking-[0.25rem] xl:text-xl">ARTIST</p>
+        <p class="font-denton-thin text-2xl tracking-[0.35rem] md:text-5xl lg:text-6xl xl:text-10xl">ANA</p>
+        <p class="font-denton-bold text-2xl tracking-[0.35rem] md:text-5xl lg:text-6xl xl:text-10xl">TAMAYO</p>
+      </div>
+      <div>
+        <Logo class="w-20 aspect-[10/14] md:w-32 lg:w-36 xl:w-52">
+      </div>
+    </div>
+    <div class="w-full h-4">
+      <div class="w-[40%] float-right border-b-[1px] border-primary">&nbsp;</div>
     </div>
   </div>
 </header>
