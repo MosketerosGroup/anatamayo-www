@@ -31,6 +31,11 @@ export default defineConfig({
     assets: '_assets'
   },
 
+  experimental: {
+    svg: true,
+    responsiveImages: true,
+  },
+
   i18n: {
     defaultLocale: 'en',
     locales: ['es', 'en'],
