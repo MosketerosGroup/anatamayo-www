@@ -78,7 +78,7 @@
   --text-5xl: 5rem;
   --text-5xl--line-height: 5rem;
   --text-6xl: 6rem;
-  --text-6xl--line-height: 6rem;
+  --text-6xl--line-height: 5rem;
   --text-10xl: 10rem;
   --text-10xl--line-height: 8rem;
 }
