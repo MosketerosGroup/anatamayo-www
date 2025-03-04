@@ -63,7 +63,7 @@
   --text-*: initial;
   --text-sm: 0.9rem;
   --text-sm--line-height: 1rem;
-  --text-base: 1.35rem;
+  --text-base: 1.15rem;
   --text-base--line-height: 1.5rem;
   --text-md: 1.35rem;
   --text-md--line-height: 1.5rem;
@@ -170,6 +170,11 @@
       lg:w-[80%]
       lg:max-w-[1100px]
       lg:mx-auto
+  }
+
+  p {
+    @apply
+      py-2
   }
 }
 
