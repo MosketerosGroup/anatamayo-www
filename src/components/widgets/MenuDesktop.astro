@@ -16,8 +16,8 @@ import menu from "@/data/menu.json";
     menu.map(({name, href, target}, key) => {
       return (
         <li class="">
-          <a href={href} class="~md/xl:~text-sizeBase/sizeLg ~md/xl:~px-3/6" target={target}>
-            <div class="pl-4 pr-4 pb-2 pt-10 hover:bg-secondary/30 transition-colors duration-500 lg:pl-5 lg:pr-5">{name}</div>
+          <a href={href} target={target}>
+            <div class="pl-4 pr-4 pb-2 pt-16 text-md hover:bg-secondary/30 transition-colors duration-500 lg:pl-5 lg:pr-5 xl:text-lg">{name}</div>
           </a>
         </li>
       )
