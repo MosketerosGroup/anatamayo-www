@@ -1,27 +1,27 @@
 [
   {
     "name": "Home",
-    "href": "#!",
+    "href": "#top",
     "target": ""
   },
   {
     "name": "About me",
-    "href": "#!",
+    "href": "#about",
     "target": ""
   },
   {
     "name": "Gallery",
-    "href": "#!",
+    "href": "#gallery",
     "target": ""
   },
   {
     "name": "Exhibitions",
-    "href": "#!",
+    "href": "#exhibitions",
     "target": ""
   },
   {
     "name": "Contact",
-    "href": "#!",
+    "href": "#contact",
     "target": ""
   }
 ]
