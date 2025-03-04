@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+
+import imgArt01 from '@assets/art-01.png';
+import imgArt02 from '@assets/art-02.png';
+import imgArt03 from '@assets/art-03.png';
+import imgArt04 from '@assets/art-04.png';
+---
+
+<!-- BEGIN SECTION GALLERY -->
+<section id="gallery" class="py-12">
+  <div class="flex flex-row">
+    <div class="basis-4/12 md:basis-1/2">&nbsp;</div>
+    <h1
+      class="basis-8/12 bg-primary font-denton-regular text-white text-xl pl-8 py-2 md:basis-1/2 xl:text-2xl"
+    >
+      Gallery
+    </h1>
+  </div>
+
+  <div class="box-container mt-8 flex flex-col flex-wrap gap-y-12 md:mt-16 md:flex-row">
+    <!-- BEGIN ART -->
+    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
+      <a href="#!">
+        <div>
+          <Image src={imgArt01} alt="" class="aspect-square" />
+        </div>
+        <div class="flex flex-row justify-between items-center">
+          <div>
+            <h2 class="font-bold text-lg mt-4">En lo Profundo</h2>
+            <p class="font-medium-italic pt-0 text-sm">18 X 24 INCHES</p>
+          </div>
+          <div>
+            <span class="border-primary border-2 px-2 py-1 font-denton-thin text-lg">+</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- END ART -->
+    <!-- BEGIN ART -->
+    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
+      <a href="#!">
+        <div>
+          <Image src={imgArt02} alt="" class="aspect-square" />
+        </div>
+        <div class="flex flex-row justify-between items-center">
+          <div>
+            <h2 class="font-bold text-lg mt-4">Selva</h2>
+            <p class="font-medium-italic pt-0 text-sm">18 X 24 INCHES</p>
+          </div>
+          <div>
+            <span class="border-primary border-2 px-2 py-1 font-denton-thin text-lg">+</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- END ART -->
+    <!-- BEGIN ART -->
+    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
+      <a href="#!">
+        <div>
+          <Image src={imgArt03} alt="" class="aspect-square" />
+        </div>
+        <div class="flex flex-row justify-between items-center">
+          <div>
+            <h2 class="font-bold text-lg mt-4">Deep Forest</h2>
+            <p class="font-medium-italic pt-0 text-sm">10 X 14 INCHES</p>
+          </div>
+          <div>
+            <span class="border-primary border-2 px-2 py-1 font-denton-thin text-lg">+</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- END ART -->
+    <!-- BEGIN ART -->
+    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
+      <a href="#!">
+        <div>
+          <Image src={imgArt04} alt="" class="aspect-square" />
+        </div>
+        <div class="flex flex-row justify-between items-center">
+          <div>
+            <h2 class="font-bold text-lg mt-4">Deep Forest</h2>
+            <p class="font-medium-italic pt-0 text-sm">10 X 14 INCHES</p>
+          </div>
+          <div>
+            <span class="border-primary border-2 px-2 py-1 font-denton-thin text-lg">+</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- END ART -->
+  </div>
+</section>
+<!-- END SECTION GALLERY -->
