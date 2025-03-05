@@ -11,7 +11,7 @@ import menu from "@/data/menu.json";
 
 <!-- BEGIN DESKTOP MENU -->
 <nav class="w-full hidden md:block">
-  <ul class="flex justify-center flex-row p-0 menu-desktop">
+  <menu class="flex justify-center flex-row p-0 menu-desktop">
   {
     menu.map(({name, href, target}, key) => {
       return (
@@ -23,6 +23,6 @@ import menu from "@/data/menu.json";
       )
     })
   }
-  </ul>
+  </menu>
 </nav>
 <!-- END DESKTOP MENU -->
