@@ -1,46 +1,46 @@
 @font-face {
   font-family: 'denton-regular';
-  src: url('fonts/DentonTest-Regular.otf') format('opentype');
+  src: url('/fonts/DentonTest-Regular.otf') format('opentype');
 }
 @font-face {
   font-family: 'denton-bold';
-  src: url('fonts/DentonTest-Bold.otf') format('opentype');
+  src: url('/fonts/DentonTest-Bold.otf') format('opentype');
 }
 @font-face {
   font-family: 'denton-thin';
-  src: url('fonts/DentonTest-Thin.otf') format('opentype');
+  src: url('/fonts/DentonTest-Thin.otf') format('opentype');
 }
 @font-face {
   font-family: 'myriad-regular';
-  src: url('fonts/Myriad-Pro-Regular.ttf') format('truetype');
+  src: url('/fonts/Myriad-Pro-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'nunito-medium-italic';
-  src: url('fonts/Nunito-MediumItalic.ttf') format('truetype');
+  src: url('/fonts/Nunito-MediumItalic.ttf') format('truetype');
 }
 @font-face {
   font-family: 'opensans-bold';
-  src: url('fonts/OpenSans-Bold.ttf') format('truetype');
+  src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'opensans-italic';
-  src: url('fonts/OpenSans-Italic.ttf') format('truetype');
+  src: url('/fonts/OpenSans-Italic.ttf') format('truetype');
 }
 @font-face {
   font-family: 'opensans-medium';
-  src: url('fonts/OpenSans-Medium.ttf') format('truetype');
+  src: url('/fonts/OpenSans-Medium.ttf') format('truetype');
 }
 @font-face {
   font-family: 'opensans-medium-italic';
-  src: url('fonts/OpenSans-MediumItalic.ttf') format('truetype');
+  src: url('/fonts/OpenSans-MediumItalic.ttf') format('truetype');
 }
 @font-face {
   font-family: 'opensans-regular';
-  src: url('fonts/OpenSans-Regular.ttf') format('truetype');
+  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'poppins-medium-italic';
-  src: url('fonts/Poppins-MediumItalic.ttf') format('truetype');
+  src: url('/fonts/Poppins-MediumItalic.ttf') format('truetype');
 }
 
 
@@ -95,6 +95,7 @@
   --color-base-content: oklch(22.32% 0.0016 17.27);
   --color-base-100: oklch(100% 0 0);
   --color-base-200: oklch(96.12% 0 0);
+  --color-error: oklch(70% 0.191 22.216);
 
   /* --color-base-300: oklch(91.45% 0.039 17.89); */
   /* --color-primary-content: oklch(38.96% 0.0617 40); */
@@ -109,7 +110,6 @@
   /* --color-success-content: oklch(98% 0.003 247.858); */
   /* --color-warning: oklch(82% 0.189 84.429); */
   /* --color-warning-content: oklch(27% 0.077 45.635); */
-  /* --color-error: oklch(70% 0.191 22.216); */
   /* --color-error-content: oklch(98% 0.003 247.858); */
   /* --radius-selector: 0.5rem; */
   /* --radius-field: 0.5rem; */
@@ -176,6 +176,12 @@
     @apply
       py-2
   }
+
+  /* input:invalid {
+    @apply
+      border-4
+      border-error
+  } */
 }
 
 @source "../components/";
@@ -195,6 +201,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: red;
+  border-width: 3px;
 }
 
 
