@@ -2,26 +2,26 @@
   {
     "name": "Home",
     "href": "#top",
-    "target": ""
+    "target": "_self"
   },
   {
     "name": "About me",
     "href": "#about",
-    "target": ""
+    "target": "_self"
   },
   {
     "name": "Gallery",
     "href": "#gallery",
-    "target": ""
+    "target": "_self"
   },
   {
     "name": "Exhibitions",
     "href": "#exhibitions",
-    "target": ""
+    "target": "_self"
   },
   {
     "name": "Contact",
     "href": "#contact",
-    "target": ""
+    "target": "_self"
   }
 ]
