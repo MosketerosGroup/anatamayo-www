@@ -1,17 +1,30 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 
-import Header from "@/components/sections/Header.astro";
+import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer.astro";
 import AboutMe from "@/components/sections/AboutMe.astro";
 import Divider from "@/components/widgets/Divider.astro";
 import Gallery from "@/components/sections/Gallery.astro";
 import Exhibitions from "@/components/sections/Exhibitions.astro";
 import Contact from "@/components/sections/Contact.astro";
+
+import Logo from "@/assets/Logo";
 ---
 
 <MainLayout>
-	<Header />
+
+	<Header client:only="react">
+		<div slot="fallback">
+			<div class="h-[425px] flex justify-center items-center md:hidden">
+				<Logo className="blur-sm brightness-200 aspect-[10/14] w-36" />
+			</div>
+			<div class="hidden h-screen md:flex justify-center items-center">
+				<Logo className="blur-sm brightness-200 aspect-[10/14] w-48" />
+			</div>
+		</div>
+	</Header>
+
 	<main>
 		<AboutMe />
 		<Divider />
