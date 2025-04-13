@@ -1,6 +1,6 @@
 import type { MenuItem } from "@/interfaces/menu";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 import { getMenu } from "@/utils/menu";
 
@@ -11,22 +11,23 @@ import Logo from "@assets/Logo";
 import ArrowDown from "@assets/ArrowDown";
 
 export default function Header() {
-
   const [menuItems, setMenuItems] = useState<Array<MenuItem>>([]);
 
   // Fetch the menu data
   useEffect(() => {
     getMenu().then((response) => {
-      if (typeof(response) === 'object') {
+      if (typeof response === "object") {
         setMenuItems(response);
       }
-    });  
-  }, [])
+    });
+  }, []);
 
   return (
     <header className="pb-16 md:pb-0 md:flex md:flex-col md:h-screen md:justify-between">
       <div className="font-denton-regular">
-        <div className="md:hidden"><MenuMobile menu={menuItems} /></div>
+        <div className="md:hidden">
+          <MenuMobile menu={menuItems} />
+        </div>
         <div className="hidden float-right w-full lg:w-[80%] xl:w-[70%] md:block">
           <MenuDesktop menu={menuItems} />
         </div>
@@ -40,13 +41,13 @@ export default function Header() {
         </div>
         <div className="w-[95%] mx-auto float-end flex flex-row justify-evenly py-8 lg:py-24">
           <div>
-            <h1 className="font-nunito tracking-[0.25rem] xl:text-xl">
+            <h1 className="font-nunito tracking-[0.5rem] xl:text-2xl">
               ARTIST
             </h1>
-            <h1 className="font-denton-thin text-2xl tracking-[0.35rem] md:text-5xl lg:text-6xl xl:text-10xl">
+            <h1 className="font-beausite-light text-2xl tracking-[0.25rem] md:text-5xl lg:text-6xl xl:text-10xl">
               ANA
             </h1>
-            <h1 className="font-denton-bold text-2xl tracking-[0.35rem] md:text-5xl lg:text-6xl xl:text-10xl">
+            <h1 className="font-beausite-regular -mt-2 text-2xl tracking-[0.25rem] md:text-5xl lg:text-6xl xl:text-10xl">
               TAMAYO
             </h1>
           </div>

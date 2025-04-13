@@ -7,7 +7,7 @@ interface Props {
 export default function MenuDesktop({menu} : Props) {
 
   return (
-    <nav className="w-full hidden md:block">
+    <nav className="font-beausite-regular w-full hidden md:block">
       <menu className="flex justify-center flex-row p-0 menu-desktop">
         {menu.map(({ name, href, target }, key) => {
           return (

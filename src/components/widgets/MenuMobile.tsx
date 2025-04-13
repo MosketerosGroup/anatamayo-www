@@ -6,7 +6,7 @@ interface Props {
 
 export default function MenuMobile({ menu }: Props) {
   return (
-    <nav className="fixed z-10 right-0 top-4 flex text-right justify-end md:hidden">
+    <nav className="font-beausite-regular fixed z-10 right-0 top-4 flex text-right justify-end md:hidden">
       <label
         className="relative z-40 px-3 py-6 right-4 bg-white/80 shadow-md shadow-gray-400"
         htmlFor="mobile-menu"
