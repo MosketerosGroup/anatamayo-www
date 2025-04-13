@@ -1,14 +1,19 @@
 ---
-import { Image } from 'astro:assets';
+import Button from "@components/widgets/Button.astro";
 
-import imgExhibition01 from '@assets/exhibition-01.png';
-import imgExhibition02 from '@assets/exhibition-02.png';
-import imgExhibition03 from '@assets/exhibition-03.png';
+import { Image } from "astro:assets";
+
+import imgExhibition01 from "@assets/exhibition-01.png";
+import imgExhibition02 from "@assets/exhibition-02.png";
+import imgExhibition03 from "@assets/exhibition-03.png";
 ---
 
-
 <section id="exhibitions" class="pt-12 pb-24 bg-base-200 lg:pt-16">
-  <h1 class="font-denton-thin text-center text-xl tracking-widest lg:text-3xl 2xl:text-5xl">EXHIBITIONS <span class="font-denton-bold">...</span></h1>
+  <h1
+    class="font-denton-thin text-center text-xl tracking-widest lg:text-3xl 2xl:text-5xl"
+  >
+    EXHIBITIONS <span class="font-denton-bold">...</span>
+  </h1>
 
   <div class="box-container mt-12 flex flex-col gap-y-12 md:flex-row">
     <!-- BEGIN EXHIBITION -->
@@ -17,14 +22,11 @@ import imgExhibition03 from '@assets/exhibition-03.png';
         <Image src={imgExhibition01} alt="" class="aspect-[302/453] w-full" />
       </div>
       <div class="md:px-4">
-        <div class="font-denton-regular text-center mt-8 mb-4 text-lg">
-          <a href="#!" class="border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-base-100">see more</a>
-        </div>
+        <Button text="see more" href="" position="center" />
       </div>
       <div class="text-secondary text-center md:px-4">
-        Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-        Maecenas pretium sed magna.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+        pretium sed magna.
       </div>
     </div>
     <!-- END EXHIBITION -->
@@ -34,14 +36,11 @@ import imgExhibition03 from '@assets/exhibition-03.png';
         <Image src={imgExhibition02} alt="" class="aspect-[302/453] w-full" />
       </div>
       <div class="md:px-4">
-        <div class="font-denton-regular text-center mt-8 mb-4 text-lg">
-          <a href="#!" class="border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-base-100">see more</a>
-        </div>
+        <Button text="see more" href="" position="center" />
       </div>
       <div class="text-secondary text-center md:px-4">
-        Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-        Maecenas pretium sed magna.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+        pretium sed magna.
       </div>
     </div>
     <!-- END EXHIBITION -->
@@ -51,14 +50,11 @@ import imgExhibition03 from '@assets/exhibition-03.png';
         <Image src={imgExhibition03} alt="" class="aspect-[302/453] w-full" />
       </div>
       <div>
-        <div class="font-denton-regular text-center mt-8 mb-4 text-lg">
-          <a href="#!" class="border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-base-100">see more</a>
-        </div>
+        <Button text="see more" href="" position="center" />
       </div>
       <div class="text-secondary text-center">
-        Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-        Maecenas pretium sed magna.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+        pretium sed magna.
       </div>
     </div>
     <!-- END EXHIBITION -->

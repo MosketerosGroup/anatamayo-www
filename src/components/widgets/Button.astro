@@ -1,0 +1,9 @@
+---
+const { text='', href='#!', position='left' } = Astro.props;
+
+const alignment = (position === 'right') ? 'text-right' : (position === 'center') ? 'text-center' : 'text-left';
+---
+
+<div class=`font-beausite-light text-center mt-8 mb-4 text-lg ${alignment}`>
+  <a href={href} class="border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-base-100">{text}</a>
+</div>
