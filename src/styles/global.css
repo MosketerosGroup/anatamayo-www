@@ -1,64 +1,92 @@
-@font-face {
+/* @font-face {
   font-family: 'denton-regular';
   src: url('/fonts/DentonTest-Regular.otf') format('opentype');
-}
-@font-face {
+} */
+/* @font-face {
   font-family: 'denton-bold';
   src: url('/fonts/DentonTest-Bold.otf') format('opentype');
-}
-@font-face {
+} */
+/* @font-face {
   font-family: 'denton-thin';
   src: url('/fonts/DentonTest-Thin.otf') format('opentype');
+} */
+@font-face {
+  font-family: "myriad-regular";
+  src: url("/fonts/Myriad-Pro-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'myriad-regular';
-  src: url('/fonts/Myriad-Pro-Regular.ttf') format('truetype');
+  font-family: "nunito-light-italic";
+  src: url("/fonts/Nunito-LightItalic.ttf") format("truetype");
 }
-@font-face {
+/* @font-face {
   font-family: 'nunito-medium-italic';
   src: url('/fonts/Nunito-MediumItalic.ttf') format('truetype');
-}
-@font-face {
+} */
+/* @font-face {
   font-family: 'opensans-bold';
   src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
+} */
+@font-face {
+  font-family: "opensans-italic";
+  src: url("/fonts/OpenSans-Italic.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'opensans-italic';
-  src: url('/fonts/OpenSans-Italic.ttf') format('truetype');
+  font-family: "opensans-medium";
+  src: url("/fonts/OpenSans-Medium.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'opensans-medium';
-  src: url('/fonts/OpenSans-Medium.ttf') format('truetype');
+  font-family: "opensans-medium-italic";
+  src: url("/fonts/OpenSans-MediumItalic.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'opensans-medium-italic';
-  src: url('/fonts/OpenSans-MediumItalic.ttf') format('truetype');
+  font-family: "opensans-regular";
+  src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'opensans-regular';
-  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-family: "poppins-medium-italic";
+  src: url("/fonts/Poppins-MediumItalic.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'poppins-medium-italic';
-  src: url('/fonts/Poppins-MediumItalic.ttf') format('truetype');
+  font-family: "beausite-fit-thin";
+  src: url("/fonts/BeausiteFitTrial-Thin.otf") format("opentype");
 }
-
+@font-face {
+  font-family: "beausite-fit-regular";
+  src: url("/fonts/BeausiteFitTrial-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "beausite-fit-light";
+  src: url("/fonts/BeausiteFitTrial-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "beausite-grand-light";
+  src: url("/fonts/BeausiteGrandTrial-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "beausite-fit-medium";
+  src: url("/fonts/BeausiteFitTrial-Medium.otf") format("opentype");
+}
 
 @import "tailwindcss";
 
 @theme {
   --font-*: initial;
-  --font-denton-regular: "denton-regular", "sans-serif";
+  /* --font-denton-regular: "denton-regular", "sans-serif";
   --font-denton-bold: "denton-bold", "sans-serif";
-  --font-denton-thin: "denton-thin", "sans-serif";
+  --font-denton-thin: "denton-thin", "sans-serif"; */
   --font-myriad: "myriad-regular", "sans-serif";
-  --font-nunito: "nunito-medium-italic", "sans-serif";
+  --font-nunito: "nunito-light-italic", "sans-serif";
   --font-bold: "opensans-bold", "sans-serif";
   --font-italic: "opensans-italic", "sans-serif";
   --font-medium: "opensans-medium", "sans-serif";
   --font-medium-italic: "opensans-medium-italic", "sans-serif";
   --font-regular: "opensans-regular", "sans-serif";
   --font-poppins: "poppins-medium-italic", "sans-serif";
+  --font-beausite-thin: "beausite-fit-thin", "sans-serif";
+  --font-beausite-regular: "beausite-fit-regular", "sans-serif";
+  --font-beausite-light: "beausite-fit-light", "sans-serif";
+  --font-beausite-grand-light: "beausite-grand-light", "sans-serif";
+  --font-beausite-medium: "beausite-fit-medium", "sans-serif";
 
   --text-*: initial;
   --text-sm: 0.9rem;
@@ -72,15 +100,15 @@
   --text-xl: 2.5rem;
   --text-xl--line-height: 2.5rem;
   --text-2xl: 3rem;
-  --text-2xl--line-height: 3rem;
+  --text-2xl--line-height: 3.5rem;
   --text-3xl: 3.5rem;
-  --text-3xl--line-height: 3.5rem;
+  --text-3xl--line-height: 4rem;
   --text-5xl: 5rem;
-  --text-5xl--line-height: 5rem;
+  --text-5xl--line-height: 6rem;
   --text-6xl: 6rem;
-  --text-6xl--line-height: 5rem;
+  --text-6xl--line-height: 7rem;
   --text-10xl: 10rem;
-  --text-10xl--line-height: 8rem;
+  --text-10xl--line-height: 9rem;
 }
 
 @plugin "daisyui";
@@ -160,21 +188,18 @@
 }
 
 @layer components {
-
   .box-container {
-    @apply
-      max-w-[85%]
+    @apply max-w-[85%]
       mx-auto
       md:max-w-[85%]
       md:mx-auto
       lg:w-[80%]
       lg:max-w-[1100px]
-      lg:mx-auto
+      lg:mx-auto;
   }
 
   p {
-    @apply
-      py-2
+    @apply py-2;
   }
 
   /* input:invalid {
@@ -185,7 +210,6 @@
 }
 
 @source "../components/";
-
 
 .box-shadow {
   filter: drop-shadow(0 0 0.25rem #afaead);
@@ -199,7 +223,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -208,8 +232,6 @@ textarea:user-invalid {
   border-color: red;
   border-width: 3px;
 }
-
-
 
 /* ul.menu-desktop {
   position: relative;
