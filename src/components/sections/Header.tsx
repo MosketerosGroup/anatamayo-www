@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="pb-16 md:pb-0 md:flex md:flex-col md:h-screen md:justify-between">
-      <div className="font-denton-regular">
+      <div>
         <div className="md:hidden">
           <MenuMobile menu={menuItems} />
         </div>
