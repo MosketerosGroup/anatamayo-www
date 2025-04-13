@@ -1,7 +1,8 @@
 ---
+const { id='', className='' } = Astro.props;
 ---
 
 
-<div class="box-container py-4">
+<div class=`box-container ${className}` id={id}>
   <hr class="w-[80%] mx-auto border-t-[1px] border-primary md:w-[65%]" />
 </div>
