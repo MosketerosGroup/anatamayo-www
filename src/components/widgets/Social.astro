@@ -1,0 +1,13 @@
+---
+const { classNameDiv = "gap-x-6", classNameItems = "h-8" } = Astro.props;
+
+import Facebook from "@assets/fb.svg";
+import Instagram from "@assets/ig.svg";
+import LinkedIn from "@assets/linkedin.svg";
+---
+
+<div class=`flex flex-row justify-center ${classNameDiv}`>
+  <a href="#!"><Facebook class={classNameItems} /></a>
+  <a href="#!"><Instagram class={classNameItems} /></a>
+  <a href="#!"><LinkedIn class={classNameItems} /></a>
+</div>
