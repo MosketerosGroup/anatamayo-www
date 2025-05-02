@@ -7,7 +7,9 @@ import Manuela from "@assets/manuela.svg";
 ---
 
 <!-- BEGIN FOOTER -->
-<footer class="max-w-[1500px] mx-auto font-beausite-regular text-center pb-8 md:pb-12">
+<footer
+  class="max-w-[1500px] mx-auto font-beausite-regular text-center pb-8 md:pb-12"
+>
   <AnaTamayo class="mt-6 h-12 mx-auto lg:h-16 xl:h-20" />
 
   <Divider className="py-4" />
@@ -24,27 +26,69 @@ import Manuela from "@assets/manuela.svg";
     <div class="text-md md:basis-1/3">
       <a href="#!"> Subscribe to newsletter </a>
     </div>
-    <div class="flex flex-col text-md md:flex-row md:items-center md:justify-center md:basis-1/3">
+    <div
+      class="flex flex-col text-md md:flex-row md:items-center md:justify-center md:basis-1/3"
+    >
       <p class="md:pr-4">Follow us</p>
       <Social classNameDiv="gap-x-3" classNameItems="h-5" />
     </div>
+
+    <!-- BEGIN MOBILE VERSION -->
     <div class="md:hidden">
       <div class="font-italic mt-8 mb-4 text-center">
-        <a
-          href="#!"
-          class="border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-base-100"
-          >Credits for design</a
+        <button
+          id="btnOpenDesignCreditsMobile"
+          class="border-2 border-primary inline-block rounded-full px-6 py-2"
         >
+          Credits for design
+        </button>
       </div>
     </div>
+    <!-- END MOBILE VERSION -->
   </div>
 
+  <!-- BEGIN DESKTOP VERSION -->
   <div class="hidden font-italic text-center md:block lg:mt-8">
-    <a
-      href="#!"
-      class="border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-base-100"
-      >Credits for design</a
+    <button
+      id="btnOpenDesignCreditsDesktop"
+      class="border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-base-200 hover:cursor-pointer"
     >
+      Credits for design
+    </button>
   </div>
+  <!-- END DESKTOP VERSION -->
+
+  <dialog
+    closedby="any"
+    id="design-credits"
+    class="w-[90%] max-w-[30rem] m-auto py-8 rounded-4xl backdrop:bg-black/70 md:w-[50%]"
+  >
+    <div class="font-italic text-center text-lg">Design by</div>
+    <Manuela id="svg-manuela" class="w-[70%] mx-auto mt-6" />
+
+    <form class="absolute top-1 right-1 ">
+      <button formmethod="dialog" class="font-bold text-lg rounded-full bg-black text-white w-12 h-12 hover:cursor-pointer">X</button>
+    </form>
+
+  </dialog>
 </footer>
+
+<script>
+  const dialogCredits: HTMLDialogElement = document.getElementById(
+    "design-credits",
+  ) as HTMLDialogElement;
+  const btnOpenDesignCreditsDesktop: HTMLButtonElement = document.getElementById(
+    "btnOpenDesignCreditsDesktop",
+  ) as HTMLButtonElement;
+  const btnOpenDesignCreditsMobile: HTMLButtonElement = document.getElementById(
+    "btnOpenDesignCreditsMobile",
+  ) as HTMLButtonElement;
+
+  const showModal = () => {
+    dialogCredits?.showModal();
+  }
+
+  btnOpenDesignCreditsDesktop?.addEventListener("click", showModal);
+  btnOpenDesignCreditsMobile?.addEventListener("click", showModal);
+</script>
 <!-- END FOOTER -->

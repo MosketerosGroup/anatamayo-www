@@ -310,3 +310,28 @@ textarea:user-invalid {
     }
   }
 } */
+
+#svg-manuela path {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 0.3px;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: title-letters 3s ease-in-out forwards;
+}
+
+@keyframes title-letters {
+  0% {
+    stroke-width: 0.3px;
+    stroke-dashoffset: 150;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+    fill: black;
+  }
+}
