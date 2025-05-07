@@ -64,7 +64,7 @@ export default function Header() {
 
       <div className="w-8 block mx-auto mt-8 md:w-12 lg:w-16 lg:mt-0 lg:pb-8">
         <a href="#about">
-          <ArrowDown className="w-full hidden md:block" />
+          <ArrowDown className="w-full hidden animate-bounce md:block" />
         </a>
       </div>
     </header>

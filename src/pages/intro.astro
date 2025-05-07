@@ -1,0 +1,28 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeaderIntro from "@/components/sections/HeaderIntro";
+import LogoFallback from "@/assets/LogoFallback";
+---
+
+<MainLayout>
+
+	<HeaderIntro client:only="react">
+		<div slot="fallback">
+			<div class="h-[425px] flex justify-center items-center md:hidden">
+				<LogoFallback className="w-36" />
+			</div>
+			<div class="hidden h-screen md:flex justify-center items-center">
+				<LogoFallback className="w-48" />
+			</div>
+		</div>
+	</HeaderIntro>
+
+	<main>
+		<!-- <AboutMe />
+		<Gallery />
+		<Exhibitions />
+		<Contact /> -->
+	</main>
+	
+	<!-- <Footer /> -->
+</MainLayout>
