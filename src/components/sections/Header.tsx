@@ -1,6 +1,6 @@
 import type { MenuItem } from "@/interfaces/menu";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { getMenu } from "@/utils/menu";
 
