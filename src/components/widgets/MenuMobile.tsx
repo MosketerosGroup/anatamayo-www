@@ -1,4 +1,5 @@
 import type { MenuItem } from "@/interfaces/menu";
+import Subscribe from "@components/widgets/Subscribe";
 
 interface Props {
   menu: Array<MenuItem>;
@@ -76,12 +77,9 @@ export default function MenuMobile({ menu }: Props) {
                   );
                 })}
               </menu>
-              {/* <div className="mt-4 pr-4 flex flex-row gap-x-4 justify-end">
-            <Image src={imgSpanish} alt="Español" className="w-10 aspect-square rounded-full border-white border-4" />
-            <a href={getRelativeLocaleUrl('en','/')}>
-              <Image src={imgEnglish} alt="English" className="w-10 aspect-square rounded-full" />
-            </a>
-          </div> */}
+
+              <Subscribe />
+
               <div className="text-center mt-16 aspect-[162/116]">
                 <svg
                   className="w-20 mx-auto"

@@ -28,7 +28,7 @@ export default function Header() {
         <div className="md:hidden">
           <MenuMobile menu={menuItems} />
         </div>
-        <div className="hidden float-right w-full lg:w-[80%] xl:w-[70%] md:block">
+        <div className="hidden float-right w-full md:w-[90%] lg:w-[70%] xl:w-[60%] md:block">
           <MenuDesktop menu={menuItems} />
         </div>
       </div>
