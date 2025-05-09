@@ -110,7 +110,7 @@
   --text-10xl: 10rem;
   --text-10xl--line-height: 9rem;
 
-  --native-dark-font-color: oklch(70% 0.191 22.216);
+  --animate-wobble: wobble 3s both infinite;
 }
 
 @plugin "daisyui" {
@@ -237,84 +237,6 @@ textarea:user-invalid {
   border-width: 3px;
 }
 
-/* ul.menu-desktop {
-  position: relative;
-  li {
-    flex: 1 1;
-    position: relative;
-    &.current,
-    &:hover {
-      z-index: 2;
-    }
-    &:last-child::after {
-      display: block;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      display: block;
-      transition: all 0.3s ease;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-    
-    &:nth-child(1).current ~ li:last-child::after {
-      left: -400%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(2).current ~ li:last-child::after {
-      left: -300%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(3).current ~ li:last-child::after {
-      left: -200%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(4).current ~ li:last-child::after {
-      left: -100%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(5).current ~ li:last-child::after {
-      left: 0%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-
-    &:nth-child(1):hover ~ li:last-child::after {
-      left: -400%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(2):hover ~ li:last-child::after {
-      left: -300%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(3):hover ~ li:last-child::after {
-      left: -200%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(4):hover ~ li:last-child::after {
-      left: -100%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    &:nth-child(5):hover ~ li:last-child::after {
-      left: 0%;
-      background-color: oklch(56.58% 0 0 / 40%);
-    }
-    a {
-      transition: all 1s ease;
-      padding: 1rem;
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      position: relative;
-      &:hover {
-        color: #fff;
-        z-index: 9;
-      }
-    }
-  }
-} */
-
 #svg-manuela path {
   fill: transparent;
   stroke: black;
@@ -337,5 +259,27 @@ textarea:user-invalid {
     stroke-dashoffset: 0;
     stroke-width: 0;
     fill: black;
+  }
+}
+
+@keyframes wobble {
+  0%, 50% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  7% {
+    transform: translateX(-7px) rotate(-3deg);
+  }
+  15% {
+    transform: translateX(3px) rotate(3deg);
+  }
+  22% {
+    transform: translateX(-3px) rotate(-1.8deg);
+  }
+  30% {
+    transform: translateX(2px) rotate(1.2deg);
+  }
+  38% {
+    transform: translateX(-1px) rotate(-0.6deg);
   }
 }
