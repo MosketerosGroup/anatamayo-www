@@ -32,7 +32,7 @@ export default function Header() {
         <div className="hidden float-right w-full md:w-[90%] lg:w-[70%] xl:w-[60%] md:block">
         {
           (menuItems.length === 0) ?
-            <ContentLoader width={850} height={130} />
+            <ContentLoader width={800} height={130} />
           :
             <MenuDesktop menu={menuItems} />
         }
@@ -47,9 +47,11 @@ export default function Header() {
         </div>
         <div className="w-[95%] mx-auto float-end flex flex-row justify-evenly py-8 lg:py-24">
           <div>
-            <h1 className="font-nunito tracking-[0.5rem] xl:text-2xl">
-              ARTIST
-            </h1>
+            <div className="w-fit">
+              <h1 className="font-nunito tracking-[0.5rem] effect-typewritter xl:text-2xl">
+                ARTIST
+              </h1>
+            </div>
             <h1 className="font-beausite-light text-2xl tracking-[0.25rem] md:text-5xl lg:text-6xl xl:text-10xl">
               ANA
             </h1>

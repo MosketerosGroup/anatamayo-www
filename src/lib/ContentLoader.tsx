@@ -17,7 +17,7 @@ const ContentLoader = ({width = 100, height = 100, ...props}) => {
     gradientRatio={2}
     {...props}
   >
-    <rect x="13" y="4" rx="0" ry="0" width={width} height={height} />
+    <rect x="13" y="4" rx="20" ry="20" width={width} height={height} />
   </Loader>
 )};
 
