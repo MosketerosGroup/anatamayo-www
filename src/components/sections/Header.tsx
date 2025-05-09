@@ -32,7 +32,7 @@ export default function Header() {
         <div className="hidden float-right w-full md:w-[90%] lg:w-[70%] xl:w-[60%] md:block">
         {
           (menuItems.length === 0) ?
-          <ContentLoader width={850} height={130} />
+            <ContentLoader width={850} height={130} />
           :
             <MenuDesktop menu={menuItems} />
         }
