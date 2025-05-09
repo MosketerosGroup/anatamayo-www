@@ -111,6 +111,7 @@
   --text-10xl--line-height: 9rem;
 
   --animate-wobble: wobble 3s both infinite;
+  --animate-typing-and-blinking: 4s typing 3s steps(10,end) 1 forwards, blinking 0.75s step-end infinite;
 }
 
 @plugin "daisyui" {
@@ -206,11 +207,17 @@
     @apply py-2;
   }
 
-  /* input:invalid {
+  .effect-typewritter {
     @apply
-      border-4
-      border-error
-  } */
+    w-0
+    overflow-hidden
+    border-r-4
+    border-primary
+    whitespace-nowrap
+    animate-typing-and-blinking
+    before:content-['\00a0']
+    after:content-['\00a0\00a0']
+  }
 }
 
 @source "../components/";
@@ -281,5 +288,23 @@ textarea:user-invalid {
   }
   38% {
     transform: translateX(-1px) rotate(-0.6deg);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinking {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
   }
 }
