@@ -9,6 +9,7 @@ import MenuMobile from "@components/widgets/MenuMobile";
 
 import Logo from "@assets/Logo";
 import ArrowDown from "@assets/ArrowDown";
+import ContentLoader from "@lib/ContentLoader";
 
 export default function Header() {
   const [menuItems, setMenuItems] = useState<Array<MenuItem>>([]);
@@ -29,7 +30,12 @@ export default function Header() {
           <MenuMobile menu={menuItems} />
         </div>
         <div className="hidden float-right w-full md:w-[90%] lg:w-[70%] xl:w-[60%] md:block">
-          <MenuDesktop menu={menuItems} />
+        {
+          (menuItems.length === 0) ?
+          <ContentLoader width={850} height={130} />
+          :
+            <MenuDesktop menu={menuItems} />
+        }
         </div>
       </div>
 
