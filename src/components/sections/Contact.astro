@@ -3,8 +3,9 @@ import Divider from "@components/widgets/Divider.astro";
 import Social from "@components/widgets/Social.astro";
 
 import Logo from '@assets/logo.svg';
-import AnaTamayo from '@assets/anatamayo.svg';
-import Manuela from '@assets/manuela.svg';
+import Button from "@components/widgets/Button.astro";
+// import AnaTamayo from '@assets/anatamayo.svg';
+// import Manuela from '@assets/manuela.svg';
 ---
 
 
@@ -39,9 +40,7 @@ import Manuela from '@assets/manuela.svg';
           <label for="message" class="font-beausite-light text-lg block">Message</label>
           <textarea name="message" id="message" class="w-full border-primary border-[1px] h-32 focus:outline-2" required= aria-required="true" aria-label="required"></textarea>
         </div>
-        <div class="font-beausite-light mt-8 mb-4 text-lg">
-          <a href="#!" class="text-base-100 bg-primary border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-transparent hover:text-primary">Send</a>
-        </div>
+        <Button text="Send" href="#!" position="left" />
       </form>
     </div>
   </div>
