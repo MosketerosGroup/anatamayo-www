@@ -6,6 +6,10 @@ import MetaPixelBody from "@/components/base/MetaPixelBody.astro";
 import GoogleTagManagerHead from "@/components/base/GoogleTagManagerHead.astro";
 import GoogleTagManagerBody from "@/components/base/GoogleTagManagerBody.astro";
 import OpenGraph from "@/components/base/OpenGraph.astro";
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer.astro";
+
+import LogoFallback from "@/assets/LogoFallback";
 
 import constantsFile from '@/data/constants.json';
 
@@ -34,8 +38,22 @@ const constants = constantsFile[currentLocale];
 		<GoogleTagManagerBody />
 		<MetaPixelBody />
 
-    <slot />
+		<Header client:only="react">
+			<div slot="fallback">
+				<div class="h-[425px] flex justify-center items-center md:hidden">
+					<LogoFallback className="w-36" />
+				</div>
+				<div class="hidden h-screen md:flex justify-center items-center">
+					<LogoFallback className="w-48" />
+				</div>
+			</div>
+		</Header>
 
+		<main>
+    	<slot />
+		</main>
+
+		<Footer />
 	</body>
 
 	<script src="../scripts/scripts.ts"></script>
