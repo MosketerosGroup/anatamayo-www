@@ -60,7 +60,7 @@ export default function Header() {
             </h1>
           </div>
           <div>
-            <Logo className="w-20 aspect-[10/14] md:w-32 lg:w-36 xl:w-52" />
+            <Logo className="logo-header w-20 aspect-[10/14] md:w-32 lg:w-36 xl:w-52" />
           </div>
         </div>
         <div className="w-full h-4">

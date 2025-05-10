@@ -111,7 +111,7 @@
   --text-10xl--line-height: 9rem;
 
   --animate-wobble: wobble 3s both infinite;
-  --animate-typing-and-blinking: 4s typing 3s steps(10,end) 1 forwards, blinking 0.75s step-end infinite;
+  --animate-typing-and-blinking: 6s typing 1s steps(15,end) 1 forwards, blinking 0.75s step-end infinite;
 }
 
 @plugin "daisyui" {
@@ -253,6 +253,15 @@ textarea:user-invalid {
   animation: title-letters 3s ease-in-out forwards;
 }
 
+.logo-header path {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 2px;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: logo 2s ease-in-out forwards;
+}
+
 @keyframes title-letters {
   0% {
     stroke-width: 0.3px;
@@ -265,6 +274,22 @@ textarea:user-invalid {
   100% {
     stroke-dashoffset: 0;
     stroke-width: 0;
+    fill: black;
+  }
+}
+
+@keyframes logo {
+  0% {
+    stroke-width: 2px;
+    stroke-dashoffset: 1500;
+  }
+  80% {
+    stroke-dashoffset: 750;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 750;
+    stroke-width: 2px;
     fill: black;
   }
 }
