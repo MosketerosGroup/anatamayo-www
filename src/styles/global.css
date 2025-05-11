@@ -111,7 +111,7 @@
   --text-10xl--line-height: 9rem;
 
   --animate-wobble: wobble 3s both infinite;
-  --animate-typing-and-blinking: 6s typing 1s steps(15,end) 1 forwards, blinking 0.75s step-end infinite;
+  --animate-typing-and-blinking: 6s typing 1s steps(30,end) 1 forwards, blinking 0.75s step-end infinite;
 }
 
 @plugin "daisyui" {
