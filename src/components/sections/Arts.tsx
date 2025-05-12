@@ -8,26 +8,20 @@ const arts = [
   {
     title: "Jaguar",
     slug: "jaguar",
-    pictureAvif: "",
-    pictureWebp: "",
-    picturePng: "",
-    pictureJpg: "https://api.anatamayo.com/wp-content/uploads/2025/05/jaguar-thumbnail-768x562.jpg",
+    image:
+      "https://api.anatamayo.com/wp-content/uploads/2025/05/jaguar-600x439.webp",
   },
   {
     title: "Diálogos Iluminados",
     slug: "dialogos-iluminados",
-    pictureAvif: "",
-    pictureWebp: "",
-    picturePng: "",
-    pictureJpg: "https://api.anatamayo.com/wp-content/uploads/2025/05/dialogo-iluminados-thumbnail-768x976.jpg",
+    image:
+      "https://api.anatamayo.com/wp-content/uploads/2025/05/dialogo-iluminados-600x762.webp",
   },
   {
     title: "Fluir - Flow",
     slug: "fluir-flow",
-    pictureAvif: "https://api.anatamayo.com/wp-content/uploads/2025/05/fluir-flow-thumbnail-768x520.avif",
-    pictureWebp: "https://api.anatamayo.com/wp-content/uploads/2025/05/fluir-flow-thumbnail-768x520.webp",
-    picturePng: "",
-    pictureJpg: "https://api.anatamayo.com/wp-content/uploads/2025/05/fluir-flow-thumbnail-768x520.jpg",
+    image:
+      "https://api.anatamayo.com/wp-content/uploads/2025/05/fluir-flow-600x406.webp",
   },
 ];
 
@@ -39,48 +33,21 @@ const Arts = ({}: props) => {
           <div className="w-90% mx-auto md:w-56 md:px-4 lg:w-80 lg:px-8 xl:w-[22rem]">
             <a href={art.slug}>
               <figure>
-                <div>
-                  <picture>
-                    {art.pictureAvif !== "" && (
-                      <source srcSet={art.pictureAvif} type="image/avif" />
-                    )}
-                    {art.pictureWebp !== "" && (
-                      <source srcSet={art.pictureWebp} type="image/webp" />
-                    )}
-                    {art.pictureJpg !== "" && (
-                      <img
-                        src={art.pictureJpg}
-                        data-image-component="true"
-                        alt={art.title}
-                        width="393"
-                        height="393"
-                        loading="lazy"
-                        decoding="async"
-                        className="aspect-square"
-                      />
-                    )}
-                    {art.picturePng !== "" && (
-                      <img
-                        src={art.picturePng}
-                        data-image-component="true"
-                        alt={art.title}
-                        width="393"
-                        height="393"
-                        loading="lazy"
-                        decoding="async"
-                        className="aspect-square object-cover"
-                      />
-                    )}
-                  </picture>
-                </div>
-                <div className="flex flex-row justify-between items-center">
+                <img
+                  src={art.image}
+                  alt={art.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-square w-full"
+                />
+                <div className="mt-4 flex flex-row justify-between items-start">
                   <div>
-                    <figcaption className="font-beausite-grand-light text-lg mt-4 text-left">
+                    <figcaption className="font-beausite-grand-light text-lg text-left">
                       {art.title}
                     </figcaption>
-                    <p className="font-medium-italic pt-0 text-sm">
+                    {/* <p className="font-medium-italic pt-0 text-sm">
                       18 X 24 INCHES
-                    </p>
+                    </p> */}
                   </div>
                   <div>
                     <span className="border-primary border-2 px-2 py-1 font-beausite-grand-light text-lg">
