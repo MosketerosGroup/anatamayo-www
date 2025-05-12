@@ -1,5 +1,7 @@
 ---
-import Divider from "@/components/widgets/Divider.astro";
+import Divider from "@components/widgets/Divider.astro";
+
+import Arts from '@components/sections/Arts'
 
 import { Image } from "astro:assets";
 
@@ -7,6 +9,7 @@ import imgArt01 from "@assets/art-01.png";
 import imgArt02 from "@assets/art-02.png";
 import imgArt03 from "@assets/art-03.png";
 import imgArt04 from "@assets/art-04.png";
+import { Picture } from "astro:assets";
 ---
 
 <!-- BEGIN SECTION GALLERY -->
@@ -23,98 +26,9 @@ import imgArt04 from "@assets/art-04.png";
   </div>
 
   <div
-    class="box-container mt-8 flex flex-col flex-wrap gap-y-12 md:mt-16 md:flex-row"
+    class="box-container mt-8 flex flex-col flex-wrap justify-center gap-y-12 md:mt-16 md:flex-row"
   >
-    <!-- BEGIN ART -->
-    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
-      <a href="#!">
-        <figure>
-          <div>
-            <Image src={imgArt01} alt="" class="aspect-square" />
-          </div>
-          <div class="flex flex-row justify-between items-center">
-            <div>
-              <figcaption
-                class="font-beausite-grand-light text-lg mt-4 text-left"
-              >
-                En lo Profundo
-              </figcaption>
-              <p class="font-medium-italic pt-0 text-sm">18 X 24 INCHES</p>
-            </div>
-            <div>
-              <span
-                class="border-primary border-2 px-2 py-1 font-beausite-grand-light text-lg"
-                >+</span
-              >
-            </div>
-          </div>
-        </figure>
-      </a>
-    </div>
-    <!-- END ART -->
-    <!-- BEGIN ART -->
-    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
-      <a href="#!">
-        <div>
-          <Image src={imgArt02} alt="" class="aspect-square" />
-        </div>
-        <div class="flex flex-row justify-between items-center">
-          <div>
-            <h2 class="font-beausite-grand-light text-lg mt-4">Selva</h2>
-            <p class="font-medium-italic pt-0 text-sm">18 X 24 INCHES</p>
-          </div>
-          <div>
-            <span
-              class="border-primary border-2 px-2 py-1 font-beausite-grand-light text-lg"
-              >+</span
-            >
-          </div>
-        </div>
-      </a>
-    </div>
-    <!-- END ART -->
-    <!-- BEGIN ART -->
-    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
-      <a href="#!">
-        <div>
-          <Image src={imgArt03} alt="" class="aspect-square" />
-        </div>
-        <div class="flex flex-row justify-between items-center">
-          <div>
-            <h2 class="font-beausite-grand-light text-lg mt-4">Deep Forest</h2>
-            <p class="font-medium-italic pt-0 text-sm">10 X 14 INCHES</p>
-          </div>
-          <div>
-            <span
-              class="border-primary border-2 px-2 py-1 font-beausite-grand-light text-lg"
-              >+</span
-            >
-          </div>
-        </div>
-      </a>
-    </div>
-    <!-- END ART -->
-    <!-- BEGIN ART -->
-    <div class="basis-1 md:basis-1/2 md:px-4 lg:basis-1/4">
-      <a href="#!">
-        <div>
-          <Image src={imgArt04} alt="" class="aspect-square" />
-        </div>
-        <div class="flex flex-row justify-between items-center">
-          <div>
-            <h2 class="font-beausite-grand-light text-lg mt-4">Deep Forest</h2>
-            <p class="font-medium-italic pt-0 text-sm">10 X 14 INCHES</p>
-          </div>
-          <div>
-            <span
-              class="border-primary border-2 px-2 py-1 font-beausite-grand-light text-lg"
-              >+</span
-            >
-          </div>
-        </div>
-      </a>
-    </div>
-    <!-- END ART -->
+    <Arts client:idle />
   </div>
 </section>
 
