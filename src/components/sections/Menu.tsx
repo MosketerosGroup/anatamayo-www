@@ -22,7 +22,7 @@ export default function Menu() {
   }, []);
 
   return (
-    <div>
+    <>
       <div className="md:hidden">
         <MenuMobile menu={menuItems} />
       </div>
@@ -34,6 +34,6 @@ export default function Menu() {
           <MenuDesktop menu={menuItems} />
       }
       </div>
-    </div>
+    </>
   );
 }

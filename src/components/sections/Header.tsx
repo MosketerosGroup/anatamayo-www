@@ -27,8 +27,10 @@ export default function Header() {
   return (
     <header className="pb-16 md:h-screen md:flex md:flex-col md:justify-between">
 
-      <Menu />
-      
+      <div>
+        <Menu />
+      </div>
+
       <div className="pt-24 box-container after:content-[''] after:table after:clear-both lg:pt-0">
         <div className="w-full h-6">
           <div className="w-[40%] float-left border-t-[1px] border-primary">
