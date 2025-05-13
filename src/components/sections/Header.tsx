@@ -10,6 +10,7 @@ import MenuMobile from "@components/widgets/MenuMobile";
 import Logo from "@assets/Logo";
 import ArrowDown from "@assets/ArrowDown";
 import ContentLoader from "@lib/ContentLoader";
+import Menu from "@components/sections/Menu";
 
 export default function Header() {
   const [menuItems, setMenuItems] = useState<Array<MenuItem>>([]);
@@ -24,21 +25,10 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="pb-16 md:pb-0 md:flex md:flex-col md:h-screen md:justify-between">
-      <div>
-        <div className="md:hidden">
-          <MenuMobile menu={menuItems} />
-        </div>
-        <div className="hidden float-right w-full md:w-[90%] lg:w-[70%] xl:w-[60%] md:block">
-        {
-          (menuItems.length === 0) ?
-            <ContentLoader width={800} height={130} />
-          :
-            <MenuDesktop menu={menuItems} />
-        }
-        </div>
-      </div>
+    <header className="pb-16 md:h-screen md:flex md:flex-col md:justify-between">
 
+      <Menu />
+      
       <div className="pt-24 box-container after:content-[''] after:table after:clear-both lg:pt-0">
         <div className="w-full h-6">
           <div className="w-[40%] float-left border-t-[1px] border-primary">
