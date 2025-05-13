@@ -1,11 +1,12 @@
 import Loader from "react-content-loader";
 
-const ContentLoader = ({width = 100, height = 100, ...props}) => {
+const ContentLoader = ({width = "100%", height = "100", viewBoxX = "100", viewBoxY = "100", transform = "", ...props}) => {
   
-  const viewBox = `0 0 ${width} ${height}`;
+  const viewBox = `0 0 ${viewBoxX} ${viewBoxY}`;
 
   return (
-  <Loader 
+  <Loader
+    title="Loading..."
     speed={4}
     width={width}
     height={height}
@@ -17,7 +18,7 @@ const ContentLoader = ({width = 100, height = 100, ...props}) => {
     gradientRatio={2}
     {...props}
   >
-    <rect x="13" y="4" rx="20" ry="20" width={width} height={height} />
+    <rect transform={transform} x="13" y="4" rx="0" ry="0" width={width} height={height} />
   </Loader>
 )};
 
