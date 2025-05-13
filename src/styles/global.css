@@ -112,10 +112,12 @@
 
   --animate-wobble: wobble 3s both infinite;
   --animate-typing-and-blinking: 6s typing 1s steps(30,end) 1 forwards, blinking 0.75s step-end infinite;
+
+  --drop-shadow-my-shadow: 0 0 6px oklch(60% 0 0);
 }
 
 @plugin "daisyui" {
-  
+
 }
 
 @plugin "daisyui/theme" {
@@ -151,8 +153,6 @@
   /* --border: 1px; */
   /* --depth: 1; */
   /* --noise: 0; */
-
-  --my-shadow: 0 0 6px oklch(70% 0.039 39.93);
 }
 
 @plugin "daisyui/theme" {
@@ -188,13 +188,12 @@
   /* --border: 1px; */
   /* --depth: 1; */
   /* --noise: 0; */
-
-  --my-shadow: 0 0 6px oklch(70% 0.039 39.93);
 }
 
 @layer components {
   .box-container {
-    @apply max-w-[85%]
+    @apply
+      max-w-[85%]
       mx-auto
       md:max-w-[85%]
       md:mx-auto
