@@ -1,15 +1,3 @@
-/* @font-face {
-  font-family: 'denton-regular';
-  src: url('/fonts/DentonTest-Regular.otf') format('opentype');
-} */
-/* @font-face {
-  font-family: 'denton-bold';
-  src: url('/fonts/DentonTest-Bold.otf') format('opentype');
-} */
-/* @font-face {
-  font-family: 'denton-thin';
-  src: url('/fonts/DentonTest-Thin.otf') format('opentype');
-} */
 @font-face {
   font-family: "myriad-regular";
   src: url("/fonts/Myriad-Pro-Regular.ttf") format("truetype");
@@ -18,14 +6,6 @@
   font-family: "nunito-light-italic";
   src: url("/fonts/Nunito-LightItalic.ttf") format("truetype");
 }
-/* @font-face {
-  font-family: 'nunito-medium-italic';
-  src: url('/fonts/Nunito-MediumItalic.ttf') format('truetype');
-} */
-/* @font-face {
-  font-family: 'opensans-bold';
-  src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
-} */
 @font-face {
   font-family: "opensans-italic";
   src: url("/fonts/OpenSans-Italic.ttf") format("truetype");
@@ -71,9 +51,6 @@
 
 @theme {
   --font-*: initial;
-  /* --font-denton-regular: "denton-regular", "sans-serif";
-  --font-denton-bold: "denton-bold", "sans-serif";
-  --font-denton-thin: "denton-thin", "sans-serif"; */
   --font-myriad: "myriad-regular", "sans-serif";
   --font-nunito: "nunito-light-italic", "sans-serif";
   --font-bold: "opensans-bold", "sans-serif";
