@@ -6,11 +6,28 @@ import Gallery from "@/components/sections/Gallery.astro";
 import Exhibitions from "@/components/sections/Exhibitions.astro";
 import Contact from "@/components/sections/Contact.astro";
 
+import Header from "@/components/sections/Header";
+
+import LogoFallback from "@/assets/LogoFallback";
+
 ---
 
 <MainLayout>
-	<AboutMe />
-	<Gallery />
-	<Exhibitions />
-	<Contact />
+	<Header client:only>
+		<div slot="fallback">
+			<div class="h-[425px] flex justify-center items-center md:hidden">
+				<LogoFallback className="w-36" />
+			</div>
+			<div class="hidden h-screen md:flex justify-center items-center">
+				<LogoFallback className="w-48" />
+			</div>
+		</div>
+	</Header>
+
+	<main>
+		<AboutMe />
+		<Gallery />
+		<Exhibitions />
+		<Contact />
+	</main>
 </MainLayout>
