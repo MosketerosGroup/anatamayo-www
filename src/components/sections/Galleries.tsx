@@ -1,29 +1,8 @@
-// import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { getGallery } from "@/utils/gallery";
 import type { GalleryFlatImage } from "@/interfaces/gallery";
-import ContentLoader from "@lib/ContentLoader";
+// import ContentLoader from "@lib/ContentLoader";
 
-const arts = [
-  {
-    title: "Jaguar",
-    slug: "jaguar",
-    image:
-      "https://api.anatamayo.com/wp-content/uploads/2025/05/jaguar-600x439.webp",
-  },
-  {
-    title: "Diálogos Iluminados",
-    slug: "dialogos-iluminados",
-    image:
-      "https://api.anatamayo.com/wp-content/uploads/2025/05/dialogo-iluminados-600x762.webp",
-  },
-  {
-    title: "Fluir - Flow",
-    slug: "fluir-flow",
-    image:
-      "https://api.anatamayo.com/wp-content/uploads/2025/05/fluir-flow-600x406.webp",
-  },
-];
 
 const Galleries = () => {
   const [galleries, setGalleries] = useState<Array<GalleryFlatImage>>([]);

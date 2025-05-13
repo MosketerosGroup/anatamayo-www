@@ -1,28 +1,8 @@
-import type { MenuItem } from "@/interfaces/menu";
-
-import { useEffect, useState } from "react";
-
-import { getMenu } from "@/utils/menu";
-
-import MenuDesktop from "@components/widgets/MenuDesktop";
-import MenuMobile from "@components/widgets/MenuMobile";
-
 import Logo from "@assets/Logo";
 import ArrowDown from "@assets/ArrowDown";
-import ContentLoader from "@lib/ContentLoader";
 import Menu from "@components/sections/Menu";
 
 export default function Header() {
-  const [menuItems, setMenuItems] = useState<Array<MenuItem>>([]);
-
-  // Fetch the menu data
-  useEffect(() => {
-    getMenu().then((response) => {
-      if (typeof response === "object") {
-        setMenuItems(response);
-      }
-    });
-  }, []);
 
   return (
     <header className="pb-16 md:h-screen md:flex md:flex-col md:justify-between">
