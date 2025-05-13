@@ -64,10 +64,13 @@ export default function MenuMobile({ menu }: Props) {
             <div className="mt-4 md:mt-12 md:pr-8">
               <menu className="mt-12 [&>*]:border-colorRegular [&>*]:border-t-[1px] [&>*:last-child]:border-b-[1px] [&>*:last-child]:pb-2">
                 {menu.map(({ name, href, target }, key) => {
+
+                  const url = `/${href}`;
+
                   return (
                     <li className="my-1 pt-2 block" key={key}>
                       <a
-                        href={href}
+                        href={url}
                         className="px-3 py-2 text-right block"
                         target={target}
                       >
