@@ -59,7 +59,7 @@ export default function HeaderIntro() {
       </div>
 
       <div className="font-beausite-regular text-center mt-24 leading-8 md:hidden">
-        IF YOU WANT BE THE FIRST
+        IF YOU WANT TO BE THE FIRST
         <br />
         TO KNOW
         <a href="https://forms.gle/9tvbr58DKjWEpiHc7" className="ml-2">
