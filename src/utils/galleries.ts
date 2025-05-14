@@ -6,7 +6,7 @@ import { getBestImageFromSrcSet } from "@/utils/utils";
 const IMAGE_MIN_WIDTH = 350;
 
 
-export const getGallery = async () => {
+export const getGalleries = async (imageMinWidth = IMAGE_MIN_WIDTH, gallerySlug? : string) => {
   try {
     const OPTIONS = {
       method: "POST",
@@ -35,17 +35,32 @@ export const getGallery = async () => {
 
     const arts = graphqlResponse.data.productCategories.nodes;
 
-    let artItems: Array<GalleryFlatImage> = [];
+    const artItems: Array<GalleryFlatImage> = [];
 
-    for (let i = 0; i < arts.length; i++) {
-      if (arts[i].slug !== "sin-categorizar") {
+    if (gallerySlug) {
+      const filteredArts = arts.filter((art) => (art.slug === gallerySlug));
+
+      (filteredArts.length > 0) &&
         artItems.push({
-          databaseId: arts[i].databaseId,
-          name: arts[i].name,
-          slug: arts[i].slug,
-          description: arts[i].description,
-          image: getBestImageFromSrcSet(arts[i].image.srcSet, IMAGE_MIN_WIDTH),
+          databaseId: filteredArts[0].databaseId,
+          name: filteredArts[0].name,
+          slug: filteredArts[0].slug,
+          description: filteredArts[0].description,
+          image: getBestImageFromSrcSet(filteredArts[0].image.srcSet, imageMinWidth),
         });
+      return artItems;
+    }
+    else {
+      for (let i = 0; i < arts.length; i++) {
+        if (arts[i].slug !== "sin-categorizar") {
+          artItems.push({
+            databaseId: arts[i].databaseId,
+            name: arts[i].name,
+            slug: arts[i].slug,
+            description: arts[i].description,
+            image: getBestImageFromSrcSet(arts[i].image.srcSet, imageMinWidth),
+          });
+        }
       }
     }
 
