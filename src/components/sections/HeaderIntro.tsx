@@ -70,7 +70,7 @@ export default function HeaderIntro() {
       </div>
 
       <div className="font-beausite-regular text-center text-md -mt-24 hidden md:block lg:-mt-12 xl:text-lg">
-        IF YOU WANT BE THE FIRST TO KNOW
+        IF YOU WANT TO BE THE FIRST TO KNOW
         <a href="https://forms.gle/9tvbr58DKjWEpiHc7" className="ml-2">
           <span className="border-2 border-primary px-2 py-2 rounded-xl transition-all duration-200 hover:bg-primary hover:text-white">
             CLICK HERE
