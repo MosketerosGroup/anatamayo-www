@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { getGallery } from "@/utils/gallery";
+import { getGalleries } from "@/utils/galleries";
 import type { GalleryFlatImage } from "@/interfaces/gallery";
-// import ContentLoader from "@lib/ContentLoader";
 
 
 const Galleries = () => {
@@ -9,7 +8,7 @@ const Galleries = () => {
 
   
   useEffect(() => {
-    getGallery().then((response) => {
+    getGalleries().then((response) => {
       if (typeof(response) === 'object')
         setGalleries(response);
     });
@@ -19,7 +18,7 @@ const Galleries = () => {
     <>
       {
         galleries.map((gallery, index) => {
-          const slug = `gallery/?id=${gallery.slug}`;
+          const slug = `gallery/?id=${gallery.databaseId}`;
 
           return (
             <div
