@@ -67,7 +67,6 @@ const GalleryDetail = () => {
     
     if (galleryId)
       getGalleryDetails(100, galleryId).then((response) => {
-    console.debug('response', response);
         if (typeof(response) === 'object')
           setGallery(response);
       });
@@ -84,7 +83,7 @@ const GalleryDetail = () => {
               &nbsp;
             </div>
           </div>
-          <h1 className="font-beausite-regular text-center text-2xl tracking-[0.25rem] leading-20 md:text-5xl lg:text-6xl xl:text-10xl">
+          <h1 className="font-beausite-regular text-center text-2xl tracking-[0.25rem] md:text-5xl lg:text-6xl xl:text-10xl">
             {gallery.name}
           </h1>
         </div>
