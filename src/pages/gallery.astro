@@ -2,6 +2,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 
 import Menu from "@components/sections/Menu";
+import GalleryDetail from "@components/sections/GalleryDetail";
 ---
 
 <MainLayout>
@@ -11,64 +12,7 @@ import Menu from "@components/sections/Menu";
 	</header>
 
 	<main class="mt-16 mb-24 md:mt-24 xl:mt-36 lg:mb-24">
-		<div class="box-container lg:pt-0">
-			<div class="w-full h-12">
-				<div class="w-[40%] float-left border-t-[1px] border-primary">&nbsp;</div>
-			</div>
-			<h1 class="font-beausite-regular text-center text-2xl tracking-[0.25rem] md:text-5xl lg:text-6xl xl:text-10xl">
-				JAGUAR
-			</h1>
-		</div>
-
-		<div class="box-container mt-12 md:text-center">
-			The name "jaguar" comes from the Tupi and Guaraní languages of South America from the word yaguarete or true
-		</div>
-
-		<div class="mx-auto w-full lg:max-w-[1100px]">
-			<div class="box-container mt-12 flex flex-row flex-wrap justify-center gap-y-1">
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-				<div class="px-2 w-36 aspect-square transition-transform hover:scale-110 hover:drop-shadow-my-shadow md:w-52">
-					<a href="#!">
-						<img class="w-full aspect-square object-cover border-white hover:border-2" src="/deserted_i-01.webp" />
-					</a>
-				</div>
-			</div>
-		</div>
-
+		<GalleryDetail client:only />
 	</main>
 
 </MainLayout>
