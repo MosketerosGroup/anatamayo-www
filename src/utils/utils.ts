@@ -22,5 +22,7 @@ export const getBestImageFromSrcSet = (flatSrcSet: string, minSize: number) => {
   // Get best image from srcSet
   const bestIndex = closeness.indexOf(filteredCloseness[0]);
 
-  return srcSet[bestIndex].trim().split(' ')[0];
+  const returnValue = srcSet[bestIndex].trim().split(' ')[0];
+
+  return returnValue;
 }
