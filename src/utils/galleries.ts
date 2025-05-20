@@ -16,7 +16,7 @@ export const getGalleries = async (imageMinWidth = IMAGE_MIN_WIDTH, gallerySlug?
       body: JSON.stringify({
         query: `
         {
-          productCategories {
+          productCategories(where: {parent: null}) {
             nodes {
               slug
               description
