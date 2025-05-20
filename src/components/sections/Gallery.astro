@@ -2,6 +2,7 @@
 import Divider from "@components/widgets/Divider.astro";
 
 import Galleries from '@/components/sections/Galleries'
+import ContentLoader from "@lib/ContentLoader";
 ---
 
 <!-- BEGIN SECTION GALLERY -->
@@ -18,9 +19,24 @@ import Galleries from '@/components/sections/Galleries'
   </div>
 
   <div
-    class="box-container min-h-80 mt-8 flex flex-col flex-wrap justify-center gap-y-12 md:mt-16 md:flex-row"
+    class="box-container min-h-[100rem] mt-8 flex flex-col flex-wrap justify-evenly gap-y-12 md:mt-16 md:flex-row md:min-h-[45rem] lg:min-h-[22rem] xl:min-h-96"
   >
-    <Galleries client:idle />
+    <Galleries client:only>
+      <div class="w-full" slot="fallback">
+        <div class="md:hidden">
+          <ContentLoader width="100%" height="1600 " viewBoxX="350" viewBoxY="1600" />
+        </div>
+        <div class="hidden md:block">
+          <ContentLoader width="100%" height="720 " viewBoxX="800" viewBoxY="720" />
+        </div>
+        <div class="hidden lg:block">
+          <ContentLoader width="100%" height="350 " viewBoxX="800" viewBoxY="350" />
+        </div>
+        <div class="hidden xl:block">
+          <ContentLoader width="100%" height="390 " viewBoxX="800" viewBoxY="390" />
+        </div>
+      </div>
+    </Galleries>
   </div>
 </section>
 

@@ -22,7 +22,7 @@ const Galleries = () => {
 
           return (
             <div
-              className="w-90% mx-auto md:w-56 md:px-4 lg:w-80 lg:px-8 xl:w-[22rem]"
+              className="w-90% mx-auto md:w-72 md:px-2 lg:w-56 lg:px-0 xl:w-60"
               key={index}
             >
               <a href={slug}>
