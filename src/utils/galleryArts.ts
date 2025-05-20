@@ -6,7 +6,7 @@ import { getBestImageFromSrcSet } from "@/utils/utils";
 const IMAGE_MIN_WIDTH = 350;
 
 
-export const getGalleryDetails = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : string) => {
+export const getGalleryArts = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : string) => {
   try {
     const OPTIONS = {
       method: "POST",
