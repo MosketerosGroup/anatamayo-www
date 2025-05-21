@@ -26,7 +26,7 @@ export default function Menu() {
       <div className="md:hidden">
         <MenuMobile menu={menuItems} />
       </div>
-      <div className="hidden float-right w-full md:min-h-36 md:w-[90%] lg:w-[70%] xl:w-[60%] md:block">
+      <div className="hidden float-right w-full md:min-h-36 md:w-[90%] lg:w-[70%] xl:w-[65%] md:block">
       {
         (menuItems.length === 0) ?
           <ContentLoader width="800" height="130" viewBoxX="700" />
