@@ -83,19 +83,19 @@ const GalleryDetail = () => {
               &nbsp;
             </div>
           </div>
-          <h1 className="font-beausite-regular text-center text-2xl tracking-[0.25rem] md:text-5xl lg:text-6xl xl:text-10xl">
+          <h1 className="font-beausite-regular uppercase text-center text-2xl tracking-[0.25rem] md:text-5xl lg:text-6xl xl:text-10xl">
             {gallery.name}
           </h1>
         </div>
 
-        <div className="box-container mt-12 md:text-center" dangerouslySetInnerHTML={{__html: gallery.description}}></div>
+        <div className="box-container mt-8 md:text-center" dangerouslySetInnerHTML={{__html: gallery.description}}></div>
 
         <div className="mx-auto w-full lg:max-w-[1100px]">
           <div className="box-container mt-12 flex flex-row flex-wrap justify-center gap-y-1">
           {
             gallery.products.map((product, index) => {
 
-              const url = `/arts/?galid=${gallery.databaseId}&id=${product.databaseId}`
+              const url = `/art/?galid=${gallery.databaseId}&id=${product.databaseId}`
 
               return (
                 <div className="px-2 w-36 aspect-square md:w-52" key={index}>
