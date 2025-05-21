@@ -1,0 +1,18 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+
+import Menu from "@components/sections/Menu";
+import ArtDetails from "@/components/sections/ArtDetails";
+---
+
+<MainLayout>
+
+	<header class="pb-8 md:pb-16 md:min-h-32">
+		<Menu client:only />
+	</header>
+
+	<main class="mt-8 mb-12 lg:mt-4">
+		<ArtDetails client:only />
+	</main>
+
+</MainLayout>
