@@ -26,3 +26,15 @@ export const getBestImageFromSrcSet = (flatSrcSet: string, minSize: number) => {
 
   return returnValue;
 }
+
+
+export const getHigherImageFromSrcSet = (flatSrcSet: string) => {
+
+  // Turn srcSet string into an array containing both link and size of each image
+  const srcSet = flatSrcSet.split(",");
+
+  // The highest position in this array is always the biggest image
+  const bestImage = srcSet[srcSet.length-1].split(" ")[1].slice(0, -1);
+
+  return bestImage;
+}
