@@ -90,6 +90,23 @@ const GalleryDetail = () => {
 
         <div className="box-container mt-8 md:text-center" dangerouslySetInnerHTML={{__html: gallery.description}}></div>
 
+        {
+          (gallery.additionalDescriptions) &&
+            <div className="box-container mt-12 flex flex-col gap-y-8 md:flex-row lg:mt-16">
+              {
+                gallery.additionalDescriptions.map((item, index) => {
+                  return (
+                    <div key={index} className="md:px-4 md:basis-4/12 xl:px-8">
+                      <h2 className="font-beausite-regular text-lg lg:text-xl">{item.name}</h2>
+                      <hr className="w-[60%]" />
+                      <p>{item.description}</p>
+                    </div>
+                  )
+                })
+              }
+            </div>
+        }
+
         <div className="mx-auto w-full lg:max-w-[1100px]">
           <div className="box-container mt-12 flex flex-row flex-wrap justify-center gap-y-1">
           {

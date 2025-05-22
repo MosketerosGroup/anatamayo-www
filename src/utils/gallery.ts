@@ -78,7 +78,7 @@ export const getGallery = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : st
       description: galleryDetail.description,
       products: products,
       subdescription: childSubdescription[0]?.description ?? '',
-      additionalDescriptions: additionalDescriptions
+      additionalDescriptions: (additionalDescriptions.length > 0) ? additionalDescriptions : null
     }
 
     return galleryDetailFlatImage;
