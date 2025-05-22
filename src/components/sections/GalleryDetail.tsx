@@ -95,11 +95,9 @@ const GalleryDetail = () => {
           {
             gallery.products.map((product, index) => {
 
-              const url = `/art/?galid=${gallery.databaseId}&id=${product.databaseId}`
-
               return (
                 <div className="px-2 w-36 aspect-square md:w-52" key={index}>
-                  <a href={url}>
+                  <a href={`/art/?galid=${gallery.databaseId}&id=${product.databaseId}`}>
                     <img
                       alt={product.name}
                       title={product.name}
