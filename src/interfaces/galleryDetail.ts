@@ -21,11 +21,22 @@ interface products {
   nodes: Array<productNode>;
 }
 
+export interface childrenNode {
+  slug: string;
+  description: string;
+}
+
+interface children {
+  nodes: Array<childrenNode>;
+}
+
 interface productCategory {
   name: string;
+  slug: string;
   databaseId: number;
   description: string;
   products: products;
+  children: children;
 }
 
 interface data {
@@ -37,6 +48,7 @@ export interface GalleryDetail {
   extensions: any;
 }
 
-export type GalleryDetailFlatImage = Omit<productCategory, "products"> & {
+export type GalleryDetailFlatImage = Omit<productCategory, "products" | "slug" | "children"> & {
   products: Array<productNodeFlatImage>;
+  subdescription: string;
 }
