@@ -3,7 +3,7 @@ import type { GalleryDetailFlatImage } from "@/interfaces/galleryDetail";
 import { useEffect, useState } from "react";
 
 import ContentLoader from "@lib/ContentLoader";
-import { getGalleryArts } from "@/utils/galleryArts";
+import { getGallery } from "@/utils/gallery";
 
 
 const Fallback = () => {
@@ -66,7 +66,7 @@ const GalleryDetail = () => {
   useEffect(() => {
     
     if (galleryId)
-      getGalleryArts(100, galleryId).then((response) => {
+      getGallery(100, galleryId).then((response) => {
         if (typeof(response) === 'object')
           setGallery(response);
       });
