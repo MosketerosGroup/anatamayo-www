@@ -75,7 +75,7 @@ export const getGallery = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : st
       databaseId: galleryDetail.databaseId,
       description: galleryDetail.description,
       products: products,
-      subdescription: childSubdescription[0] ? childSubdescription[0].description : ''
+      subdescription: childSubdescription[0]?.description ?? ''
     }
 
     console.debug('gallteryDestail', galleryDetailFlatImage);
