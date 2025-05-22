@@ -70,11 +70,7 @@ export const getGallery = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : st
 
     // Get additional descriptions sorted
     const additionalDescriptions : Array<childrenNode> = children.filter((child) => (child.slug !== `${galleryDetail.slug}-subdescription`));
-    console.debug('addtional', galleryDetail);
     additionalDescriptions.sort((a, b) => (a.databaseId - b.databaseId));
-
-
-    console.debug('graphqlResponse', graphqlResponse);
 
     const galleryDetailFlatImage : GalleryDetailFlatImage = {
       name: galleryDetail.name,
@@ -84,8 +80,6 @@ export const getGallery = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : st
       subdescription: childSubdescription[0]?.description ?? '',
       additionalDescriptions: additionalDescriptions
     }
-
-    console.debug('gallteryDestail', galleryDetailFlatImage);
 
     return galleryDetailFlatImage;
   } 
