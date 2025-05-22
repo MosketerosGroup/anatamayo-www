@@ -22,6 +22,8 @@ interface products {
 }
 
 export interface childrenNode {
+  databaseId: number;
+  name: string;
   slug: string;
   description: string;
 }
@@ -51,4 +53,5 @@ export interface GalleryDetail {
 export type GalleryDetailFlatImage = Omit<productCategory, "products" | "slug" | "children"> & {
   products: Array<productNodeFlatImage>;
   subdescription: string;
+  additionalDescriptions: Array<childrenNode> | null;
 }
