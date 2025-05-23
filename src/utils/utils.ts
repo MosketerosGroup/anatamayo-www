@@ -34,7 +34,7 @@ export const getHigherImageFromSrcSet = (flatSrcSet: string) => {
   const srcSet = flatSrcSet.split(",");
 
   // The highest position in this array is always the biggest image
-  const bestImage = srcSet[srcSet.length-1].split(" ")[1].slice(0, -1);
+  const bestImage = srcSet[srcSet.length-1].split(" ")[1];
 
   return bestImage;
 }
