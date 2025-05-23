@@ -13,11 +13,9 @@ export default function MenuDesktop({menu} : Props) {
       <menu className="flex justify-center flex-row p-0 xl:text-lg">
         {menu.map(({ name, href, target }, key) => {
 
-          const url = `/${href}`;
-          
           return (
             <li className="" key={key}>
-              <a href={url} target={target}>
+              <a href={href} target={target}>
                 <div className="group pl-4 pr-4 pb-2 pt-16 hover:bg-secondary/30 transition-colors duration-500 lg:pl-5 lg:pr-5">
                   <ItalicByHover>{name}</ItalicByHover>
                 </div>
