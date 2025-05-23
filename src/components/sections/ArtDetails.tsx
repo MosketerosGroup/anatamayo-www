@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { GalleryDetailFlatImage } from "@/interfaces/galleryDetail";
-import type { Art, GalleryAndArts } from "@/interfaces/art";
+import type { Art } from "@/interfaces/art";
 import { getGallery } from "@/utils/gallery";
 import { getArt } from "@/utils/art";
 
@@ -23,8 +23,15 @@ import styles from "@/styles/artDetails.module.css";
 import ContentLoader from "@/lib/ContentLoader";
 
 const ArtDetails = () => {
+
+  const DEFAULT_IMAGE_DIALOG : string = '/img/placeholder.webp';
+
   const [gallery, setGallery] = useState<GalleryDetailFlatImage | null>(null);
   const [art, setArt] = useState<Art | null>(null);
+  const [dialogIsOpen, setDialogIsOpen] = useState<boolean>(false);
+  const [imageDialog, setImageDialog] = useState<string>(DEFAULT_IMAGE_DIALOG);
+  const dialogArtRef = useRef<HTMLDialogElement | null>(null);
+  // const imageDialogArtRef = useRef<HTMLImageElement | null>(null);
 
   // Get the galleryId & artId from URL
   const params = new URLSearchParams(document.location.search);
@@ -46,7 +53,7 @@ const ArtDetails = () => {
             const selectedArt = response.filter(
               (art) => art.databaseId === Number(artId),
             );
-            console.debug('art', selectedArt[0]);
+            // console.debug('art', selectedArt[0]);
             setArt(selectedArt[0]);
           }
         });
@@ -84,6 +91,38 @@ const ArtDetails = () => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi, onNavButtonClick);
+
+
+  const openDialogFullSize = (url : string) => {
+
+    // Change image
+    setImageDialog(url);
+
+    setDialogIsOpen(true);
+
+    // 💩 Yes, I know, I'm stepping out of React paradigm
+    const tmpBody : HTMLCollection = document.getElementsByTagName('body') as HTMLCollection;
+    const body : (HTMLBodyElement | null) = (tmpBody.length > 0) ? tmpBody.item(0) as HTMLBodyElement : null;
+
+    body?.classList.add('overflow-y-hidden');
+    dialogArtRef.current?.showModal();
+  }
+
+
+  const onCloseDialogFullSize = () => {
+
+    setDialogIsOpen(false);
+
+    // 💩 Yes, I know, I'm stepping out of React paradigm
+    const tmpBody : HTMLCollection = document.getElementsByTagName('body') as HTMLCollection;
+    const body : (HTMLBodyElement | null) = (tmpBody.length > 0) ? tmpBody.item(0) as HTMLBodyElement : null;
+    body?.classList.remove('overflow-y-hidden');
+
+    // Change back image to placeholder
+    setImageDialog(DEFAULT_IMAGE_DIALOG);
+
+  }
+
 
   return (
     <>
@@ -198,7 +237,7 @@ const ArtDetails = () => {
                     className="w-16"
                   />
                 </a>
-                <a href="#!">
+                <a href="mailto:ana@anatamayo.com">
                   <img src={imgEmail.src} alt="Email" className="w-16" />
                 </a>
               </div>
@@ -232,6 +271,8 @@ const ArtDetails = () => {
                                   src={image.thumbnailUrl}
                                   className="m-auto max-h-96"
                                   alt=""
+                                  data-fullsize={image.url}
+                                  onClick={() => openDialogFullSize(image.url)}
                                 />
                               </div>
                             )
@@ -379,6 +420,43 @@ const ArtDetails = () => {
           )}
         </div>
       </div>
+
+      <div id="overlay" className={`bg-black/80 w-full h-screen fixed top-0 left-0 z-40 ${(dialogIsOpen)?'':'hidden'}`}></div>
+
+      <dialog id="dialog-art" ref={dialogArtRef} onClose={onCloseDialogFullSize} className="bg-white mx-auto my-auto z-50 max-w-[90%] max-h-[90%]">
+        <div className="flex flex-col">
+          <div>
+            {
+              (imageDialog === DEFAULT_IMAGE_DIALOG) ?
+                <>
+                  <div className="md:hidden">
+                    <ContentLoader
+                      width="100%"
+                      height="200"
+                      viewBoxX="400"
+                      viewBoxY="200"
+                    />
+                  </div>
+                  <div className="hidden md:block">
+                    <ContentLoader
+                      width="100%"
+                      height="600"
+                      viewBoxX="800"
+                      viewBoxY="600"
+                    />
+                  </div>
+                </>
+              :
+                <img src={imageDialog} alt="" className="max-h-[75vh]" />
+            }
+          </div>
+          <form method="dialog">
+            <button className="font-beausite-light ml-4 my-8 text-lg text-center border-2 border-primary inline-block rounded-full px-6 py-2 hover:bg-primary hover:text-base-100">
+              close
+            </button>
+          </form>
+        </div>
+      </dialog>
     </>
   );
 };
