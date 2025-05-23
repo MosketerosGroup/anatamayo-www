@@ -1,6 +1,8 @@
 ---
 import '@/styles/global.css';
 
+import WhatsApp from "astro-whatsapp";
+
 import MetaPixelHead from "@/components/base/MetaPixelHead.astro";
 import MetaPixelBody from "@/components/base/MetaPixelBody.astro";
 import GoogleTagManagerHead from "@/components/base/GoogleTagManagerHead.astro";
@@ -10,6 +12,7 @@ import Footer from "@/components/sections/Footer.astro";
 
 
 import constantsFile from '@/data/constants.json';
+import { ClientRouter, fade } from 'astro:transitions';
 
 const currentLocale : ('es'|'en') = (Astro.currentLocale === 'es') ? Astro.currentLocale : 'en';
 const constants = constantsFile[currentLocale];
@@ -30,8 +33,9 @@ const constants = constantsFile[currentLocale];
 		<MetaPixelHead />
 		<OpenGraph />
 
+		<ClientRouter />
 	</head>
-	<body class="bg-base-100 h-full font-regular text-base text-justify text-primary">
+	<body class="bg-base-100 h-full font-regular text-base text-justify text-primary" transition:animate={fade({duration: "1s"})}>
 
 		<GoogleTagManagerBody />
 		<MetaPixelBody />
@@ -39,6 +43,10 @@ const constants = constantsFile[currentLocale];
 		<slot />
 
 		<Footer />
+
+		<WhatsApp
+			mobile="15613054777"
+		/>
 	</body>
 
 	<script src="../scripts/scripts.ts"></script>
