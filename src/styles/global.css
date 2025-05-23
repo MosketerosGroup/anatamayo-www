@@ -167,6 +167,9 @@
   /* --noise: 0; */
 }
 
+@layer base {
+}
+
 @layer components {
   .box-container {
     @apply
