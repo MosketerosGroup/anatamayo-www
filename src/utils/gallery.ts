@@ -20,7 +20,7 @@ export const getGallery = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : st
             name
             slug
             databaseId
-            products (where: {categoryId: ${galleryId}, status: "publish"}) {
+            products (where: {categoryId: ${galleryId}, status: "publish"}, last: 50) {
               nodes {
                 databaseId
                 name
