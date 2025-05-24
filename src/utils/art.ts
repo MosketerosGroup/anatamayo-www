@@ -20,7 +20,7 @@ export const getArt = async (imageMinWidth = IMAGE_MIN_WIDTH, galleryId : string
           productCategory (id: ${galleryId}, idType: DATABASE_ID) {
             name
             databaseId
-            products (where: {categoryId: ${galleryId}, status: "publish"}) {
+            products (where: {categoryId: ${galleryId}, status: "publish"}, last: 50) {
               nodes {
                 databaseId
                 name
